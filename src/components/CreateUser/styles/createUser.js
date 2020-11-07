@@ -11,10 +11,13 @@ color: grey;
 
 export const Input = styled.input`
   padding: 7px;
-  margin-top: 15px;
   border-radius: 10px;
   border:0;
   box-shadow:0 0 15px 4px rgba(0,0,0,0.07);
+
+  &:last-of-type {
+    margin-top: 15px;
+  }
 
   &[type=text]:focus {
     border: 1px solid rgba(81, 203, 238, 1);
@@ -26,6 +29,6 @@ export const Input = styled.input`
 
 export const Text = styled.h3`
   color: #666161;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
 `
 
