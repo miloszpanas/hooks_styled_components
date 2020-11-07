@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import styled from "styled-components/macro";
+
+const Container = styled.div`
+  width: 600px;
+  margin: 0 auto;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const Grid = styled.div`
+  display: flex;
+  width: 100%;
+`
+
+const GridItem = styled.div`
+  width: 50%;
+`
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <Grid>
+        <GridItem>hello asdasdas</GridItem>
+        <GridItem>hello asdasdas</GridItem>
+      </Grid>
+    </Container>
   );
 }
 
