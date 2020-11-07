@@ -22,7 +22,7 @@ export const Th = styled.th`
 
 export const BodyTableRow = styled.tr`
   &:nth-child(odd) {
-    background-color: blue;
+    background-color: whitesmoke;
   }
 `;
 
