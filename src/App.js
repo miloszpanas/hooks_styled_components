@@ -1,4 +1,5 @@
 import styled from "styled-components/macro";
+import { CreateUser } from "./components/CreateUser";
 
 const Container = styled.div`
   width: 600px;
@@ -22,8 +23,12 @@ function App() {
   return (
     <Container>
       <Grid>
-        <GridItem>hello asdasdas</GridItem>
-        <GridItem>hello asdasdas</GridItem>
+        <GridItem>
+          <CreateUser />
+        </GridItem>
+        <GridItem>
+          {/* <UserTable /> */}
+        </GridItem>
       </Grid>
     </Container>
   );
