@@ -1,7 +1,7 @@
 import React from "react";
-import { Container, Text, Table, Th, BodyTableRow, TableData } from "./styles/userTable";
+import { Container, Text, Table, Th, BodyTableRow, TableData, ButtonContainer, Button } from "./styles/userTable";
 
-export const UserTable = ({ data }) => {
+export const UserTable = ({ data, deleteUser }) => {
   return (
     <Container>
       <Text>User data</Text>
@@ -22,7 +22,12 @@ export const UserTable = ({ data }) => {
                 <TableData>{idx + 1}</TableData>
                 <TableData>{entry.name}</TableData>
                 <TableData>{entry.surname}</TableData>
-                <TableData><button></button></TableData>
+                <TableData>
+                  <ButtonContainer>
+                    <Button onClick={() => deleteUser(entry.id)}>Remove</Button>
+                    <Button>Edit</Button>
+                  </ButtonContainer>
+                </TableData>
               </BodyTableRow>
             );
           })}

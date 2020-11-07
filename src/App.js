@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "styled-components/macro";
 import { CreateUser } from "./components/CreateUser";
 import { UserTable } from "./components/UserTable";
@@ -40,8 +41,15 @@ const userData = [
 
 function App() {
 
+  const [users, setUsers] = useState(userData);
+  const [isEdited, setIsEdited] = useState(false);
+
   const addNewUser = (user) => {
-    console.log(user);
+    setUsers([ ...users, user ]);
+  }
+
+  const deleteUser = id => {
+    setUsers(users.filter(user => user.id !== id))
   }
 
   return (
@@ -51,7 +59,7 @@ function App() {
           <CreateUser addNewUser={addNewUser}/>
         </GridItem>
         <GridItem>
-          <UserTable data={userData}/>
+          <UserTable data={users} deleteUser={deleteUser}/>
         </GridItem>
       </Grid>
     </Container>

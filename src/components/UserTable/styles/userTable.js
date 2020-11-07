@@ -29,3 +29,30 @@ export const BodyTableRow = styled.tr`
 export const TableData = styled.td`
   padding: 5px;
 `
+
+export const ButtonContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+
+export const Button = styled.button`
+  padding: 7px;
+  margin-top: 2px;
+  border: none;
+  background-color: #33bdef;
+  color: white;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    background-color: #33bdefd1;
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+
+`
