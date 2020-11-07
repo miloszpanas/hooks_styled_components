@@ -1,8 +1,9 @@
 import styled from "styled-components/macro";
 import { CreateUser } from "./components/CreateUser";
+import { UserTable } from "./components/UserTable";
 
 const Container = styled.div`
-  width: 600px;
+  width: 700px;
   margin: 0 auto;
   height: 100vh;
   display: flex;
@@ -19,15 +20,38 @@ const GridItem = styled.div`
   width: 50%;
 `
 
+const userData = [
+  {
+    id: 1,
+    name: "Anna",
+    surname: "Taylor"
+  },
+  {
+    id: 2,
+    name: "Michael",
+    surname: "Knight"
+  },
+  {
+    id: 3,
+    name: "Oliver",
+    surname: "Stone"
+  }
+]
+
 function App() {
+
+  const addNewUser = (user) => {
+    console.log(user);
+  }
+
   return (
     <Container>
       <Grid>
         <GridItem>
-          <CreateUser />
+          <CreateUser addNewUser={addNewUser}/>
         </GridItem>
         <GridItem>
-          {/* <UserTable /> */}
+          <UserTable data={userData}/>
         </GridItem>
       </Grid>
     </Container>

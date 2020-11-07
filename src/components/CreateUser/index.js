@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { UserForm, Input, Text } from "./styles/createUser";
+import { UserForm, Input, Text, Button } from "./styles/createUser";
+import uuid from "react-uuid";
 
-export const CreateUser = () => {
+export const CreateUser = ({ addNewUser }) => {
   const initialState = {
     id: null,
     name: "",
@@ -14,8 +15,24 @@ export const CreateUser = () => {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
 
+  const onUserSubmit = (e) => {
+    e.preventDefault();
+    const { name, surname } = user;
+
+    if (!name.length || !surname.length) return;
+
+    const newUser = {
+      id: uuid(),
+      name,
+      surname,
+    };
+
+    addNewUser(newUser);
+    setUser(initialState);
+  };
+
   return (
-    <UserForm>
+    <UserForm onSubmit={onUserSubmit}>
       <Text>Create new User</Text>
       <Input
         type="text"
@@ -31,6 +48,7 @@ export const CreateUser = () => {
         value={user.surname}
         onChange={onInputChange}
       />
+      <Button type="submit">Add</Button>
     </UserForm>
   );
 };
