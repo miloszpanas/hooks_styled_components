@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Text, Table, Th, BodyTableRow, TableData, ButtonContainer, Button } from "./styles/userTable";
 
-export const UserTable = ({ data, deleteUser }) => {
+export const UserTable = ({ data, deleteUser, setCurrentUser }) => {
   return (
     <Container>
       <Text>User data</Text>
@@ -25,7 +25,7 @@ export const UserTable = ({ data, deleteUser }) => {
                 <TableData>
                   <ButtonContainer>
                     <Button onClick={() => deleteUser(entry.id)}>Remove</Button>
-                    <Button>Edit</Button>
+                    <Button onClick={() => setCurrentUser(entry)}>Edit</Button>
                   </ButtonContainer>
                 </TableData>
               </BodyTableRow>
