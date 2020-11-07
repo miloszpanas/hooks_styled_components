@@ -16,24 +16,28 @@ export const Table = styled.table`
 `;
 
 export const Th = styled.th`
- text-align: left;
- padding: 5px;
-`
+  text-align: left;
+  padding: 5px;
+`;
 
 export const BodyTableRow = styled.tr`
- &:nth-child(odd) {
-  background-color: whitesmoke;
- }
-`
+  &:nth-child(odd) {
+    background-color: whitesmoke;
+  }
+`;
 
 export const TableData = styled.td`
   padding: 5px;
-`
+  text-overflow: ellipsis;
+  width: 88px;
+  max-width: 88px;
+  overflow: hidden;
+`;
 
 export const ButtonContainer = styled.div`
   display: flex;
   flex-direction: column;
-`
+`;
 
 export const Button = styled.button`
   padding: 7px;
@@ -54,5 +58,4 @@ export const Button = styled.button`
   &:active {
     transform: translateY(1px);
   }
-
-`
+`;
